@@ -25,6 +25,7 @@ PROFILE_SOURCES=(
 FILES=(
 '.zshrc'
 '.zshrc.pre-oh-my-zsh'
+'.gitconfig'
 )
 
 # Making /etc/profile
