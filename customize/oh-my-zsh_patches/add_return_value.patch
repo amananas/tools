@@ -1,0 +1,23 @@
+diff --git a/themes/af-magic.zsh-theme b/themes/af-magic.zsh-theme
+index 1c6d173..8f0dfbf 100644
+--- a/themes/af-magic.zsh-theme
++++ b/themes/af-magic.zsh-theme
+@@ -1,12 +1,18 @@
+ # af-magic.zsh-theme
+ # Repo: https://github.com/andyfleming/oh-my-zsh
+ # Direct Link: https://github.com/andyfleming/oh-my-zsh/blob/master/themes/af-magic.zsh-theme
++# Patched
+ 
+ if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
+ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
+ 
++status_prompt() {
++  [[ $? -ne 0 ]] && echo "%{%F{red}%}✘%{$reset_color%}" || echo "%{$fg[green]%}✔%{$reset_color%}"
++}
++
+ # primary prompt
+ PROMPT='$FG[237]------------------------------------------------------------%{$reset_color%}
++$(status_prompt) \
+ $FG[032]%~\
+ $(git_prompt_info) \
+ $FG[105]%(!.#.»)%{$reset_color%} '
