@@ -37,13 +37,13 @@ echo "\n\n#\n# Global functions\n#" >> /etc/profile
 for function in "${PROFILE_FUNCTIONS[@]}"; do echo "function $function" >> /etc/profile; done
 echo "\n\n#\n# Global sources\n#" >> /etc/profile
 for source in "${PROFILE_SOURCES[@]}"; do echo "source $source" >> /etc/profile; done
-echo "source /etc/profile" > ~/.bashrc
+echo "source /etc/profile" > $HOME/.bashrc
 
 # Copy source files
-for file in "${FILES[@]}"; do cp "$file" "~/$file"; done
+for file in "${FILES[@]}"; do cp "$file" "$HOME/$file"; done
 
 # Set up oh-my-zsh
 here=$(pwd)
 patches=$(ls "oh-my-zsh_patches")
-cd ~/.oh-my-zsh && for patch in "$patch"; do cp "$here/oh-my-zsh_patches/$patch" . ; git apply $patch ; done; cd $here
+cd $HOME/.oh-my-zsh && for patch in "$patches"; do cp "$here/oh-my-zsh_patches/$patch" . ; git apply $patch ; done; cd $here
 
