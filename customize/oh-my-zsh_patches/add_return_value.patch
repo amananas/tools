@@ -17,6 +17,7 @@ index 1c6d173..8f0dfbf 100644
 +
  # primary prompt
  PROMPT='$FG[237]------------------------------------------------------------%{$reset_color%}
++$FG[032][%T] \
 +$(status_prompt) \
  $FG[032]%~\
  $(git_prompt_info) \
