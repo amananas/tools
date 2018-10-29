@@ -1,0 +1,18 @@
+
+#
+# Global Variables
+#
+export EDITOR="gvim"
+
+
+#
+# Global Aliases
+#
+alias drop_caches="sudo sh -c 'echo 1 > /proc/sys/vm/drop_caches; echo 2 > /proc/sys/vm/drop_caches; echo 3 > /proc/sys/vm/drop_caches'"
+alias git_remove_whitespaces="find . -type f -not -iwholename '*.git*' -print0 | xargs -0 perl -pi -e 's/[\t ]+$//'"
+alias whereiscommand="command_not_found_handle"
+alias rgrep="grep -r -n -C 2 --color"
+alias tt="tree -L 3"
+alias gdif="git difftool"
+alias ll="ls --color=auto"
+alias rr="ranger"
